@@ -1,0 +1,30 @@
+﻿<Window x:Class="CRUD_Inventory.StockWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CRUD_Inventory"
+        mc:Ignorable="d"
+        Title="Выбор склада" Height="350" Width="450" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center" Margin="5" Foreground="#005BB5" Text="Для удаления, изменения и открытия выберите склад и нажмите кнопку" />
+        <DataGrid Name="data" Grid.Row="1" Margin="10" IsReadOnly="True" ColumnWidth="*">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название склада" Binding="{Binding SName}"/>
+                <DataGridTextColumn Header="Город" Binding="{Binding SCity}"/>
+                <DataGridTextColumn Header="Адрес" Binding="{Binding Adress}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <WrapPanel HorizontalAlignment="Center" Grid.Row="2">
+            <Button Margin="10,5" Content="Добавить" Width="85" Click="AddOpen"/>
+            <Button Margin="10,5" Content="Изменить" Width="85" Click="ChangeClick"/>
+            <Button Margin="10,5" Content="Удалить" Width="85" Click="DeleteClick"/>
+            <Button Margin="10,5" Content="Открыть" Width="85" Click="OpenClick"/>
+        </WrapPanel>
+    </Grid>
+</Window>

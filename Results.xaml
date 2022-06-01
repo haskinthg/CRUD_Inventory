@@ -1,0 +1,88 @@
+﻿<Window x:Class="CRUD_Inventory.Results"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CRUD_Inventory"
+        mc:Ignorable="d"
+        Title="Results" Height="450" Width="800">
+    <Grid>
+        <DataGrid Name="data" Margin="3,10,0,0" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Код" Binding="{Binding ProductId}">
+
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Наименование" Binding="{Binding PName}">
+
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="65" Binding="{Binding PGroup}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="Товарная группа"
+                                           TextWrapping="Wrap"
+                                           TextAlignment="Center"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Margin="1"/>
+                    </DataGridTextColumn.Header>
+
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="75" Binding="{Binding PUnit}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="Единица измерения"
+                                           TextWrapping="Wrap"
+                                           TextAlignment="Center"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Margin="1"/>
+                    </DataGridTextColumn.Header>
+
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Страна" Binding="{Binding PCountry}">
+
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="75" Header="Поставщик" Binding="{Binding Producer.PName}">
+
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="60" Binding="{Binding nost}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="Номин. остаток"
+                                           TextWrapping="Wrap"
+                                           TextAlignment="Center"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Margin="1"/>
+                    </DataGridTextColumn.Header>
+
+                </DataGridTextColumn>
+                <DataGridTemplateColumn Width="70" >
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="Реальный остаток"
+                                           TextWrapping="Wrap"
+                                           TextAlignment="Center"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Margin="1"/>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="addr">
+                                <TextBlock Text="{Binding rost}"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Width="90" Binding="{Binding dif}">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="Расхождение"
+                                           TextWrapping="Wrap"
+                                           TextAlignment="Center"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Margin="1"/>
+                    </DataGridTextColumn.Header>
+
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
