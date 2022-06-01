@@ -24,12 +24,17 @@ namespace CRUD_Inventory
             InitializeComponent();
             Update();
         }
+        Model.InventoryEntities db = new Model.InventoryEntities();
         private void Update()
         {
-            var db = new Model.InventoryEntities();
             data.Items.Clear();
             foreach(var i in Model.Data.GetProducers(db))
                 data.Items.Add(i);
+        }
+
+        private void Delete(object sender, RoutedEventArgs e)
+        {
+            Model.Data.RemoveProducer(db, data.SelectedItem as Model.Producer);
         }
     }
 }

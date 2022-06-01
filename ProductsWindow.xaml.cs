@@ -67,6 +67,11 @@ namespace CRUD_Inventory
             window.Closed += Window_Closed;
 
         }
+        private void Delete(object sender, RoutedEventArgs e)
+        {
+            Data.RemoveProduct(db,data.SelectedItem as Product);
+            Update();
+        }
         private void ShowResult(object sender, RoutedEventArgs e)
         {
             var window = new Results();

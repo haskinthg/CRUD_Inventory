@@ -25,7 +25,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock VerticalAlignment="Center"  Margin="0,9" Grid.Row="0" Text="Логин"/>
                 <TextBlock VerticalAlignment="Center" Margin="0,9" Grid.Row="1" Text="Пароль"/>
-                <TextBox Name="id" Margin="0,9" Height="22" Grid.Row="0" Grid.Column="1"  />
+                <TextBox PreviewTextInput="NumberValidationTextBox" Name="id" Margin="0,9" Height="22" Grid.Row="0" Grid.Column="1"  />
                 <PasswordBox Name="password" Margin="0,9" Height="22" Grid.Row="1" Grid.Column="1"  />
                 <Button Width="80" Height="30" Grid.Row="2" Grid.ColumnSpan="2" Content="Войти" HorizontalAlignment="Center"  Margin="10,5,0,5"  Click="LogInClick"/>
                 <Button Margin="3" Width="100" Content="Регистрация" Grid.Column="2" Grid.Row="3" Height="30" Background="White" 

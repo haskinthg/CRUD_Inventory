@@ -67,8 +67,10 @@
           <Property Name="SCity" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Adress" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Employee__StockI__3E52440B">
-          <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
+        <Association Name="FK__Employee__StockI__47DBAE45">
+          <End Role="Stock" Type="Self.Stock" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Stock">
@@ -79,8 +81,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__InProduct__Produ__440B1D61">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+        <Association Name="FK__InProduct__Produ__5AEE82B9">
+          <End Role="Product" Type="Self.Product" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="InProduct" Type="Self.InProduct" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
@@ -91,8 +95,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OutProduc__Produ__46E78A0C">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+        <Association Name="FK__OutProduc__Produ__6E01572D">
+          <End Role="Product" Type="Self.Product" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="OutProduct" Type="Self.OutProduct" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
@@ -103,8 +109,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Producer__StockI__3B75D760">
-          <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
+        <Association Name="FK__Producer__StockI__01142BA1">
+          <End Role="Stock" Type="Self.Stock" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Producer" Type="Self.Producer" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Stock">
@@ -115,8 +123,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Product__Produce__412EB0B6">
-          <End Role="Producer" Type="Self.Producer" Multiplicity="1" />
+        <Association Name="FK__Product__Produce__14270015">
+          <End Role="Producer" Type="Self.Producer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Producer">
@@ -134,23 +144,23 @@
           <EntitySet Name="Producer" EntityType="Self.Producer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Stock" EntityType="Self.Stock" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Employee__StockI__3E52440B" Association="Self.FK__Employee__StockI__3E52440B">
+          <AssociationSet Name="FK__Employee__StockI__47DBAE45" Association="Self.FK__Employee__StockI__47DBAE45">
             <End Role="Stock" EntitySet="Stock" />
             <End Role="Employee" EntitySet="Employee" />
           </AssociationSet>
-          <AssociationSet Name="FK__InProduct__Produ__440B1D61" Association="Self.FK__InProduct__Produ__440B1D61">
+          <AssociationSet Name="FK__InProduct__Produ__5AEE82B9" Association="Self.FK__InProduct__Produ__5AEE82B9">
             <End Role="Product" EntitySet="Product" />
             <End Role="InProduct" EntitySet="InProduct" />
           </AssociationSet>
-          <AssociationSet Name="FK__OutProduc__Produ__46E78A0C" Association="Self.FK__OutProduc__Produ__46E78A0C">
+          <AssociationSet Name="FK__OutProduc__Produ__6E01572D" Association="Self.FK__OutProduc__Produ__6E01572D">
             <End Role="Product" EntitySet="Product" />
             <End Role="OutProduct" EntitySet="OutProduct" />
           </AssociationSet>
-          <AssociationSet Name="FK__Producer__StockI__3B75D760" Association="Self.FK__Producer__StockI__3B75D760">
+          <AssociationSet Name="FK__Producer__StockI__01142BA1" Association="Self.FK__Producer__StockI__01142BA1">
             <End Role="Stock" EntitySet="Stock" />
             <End Role="Producer" EntitySet="Producer" />
           </AssociationSet>
-          <AssociationSet Name="FK__Product__Produce__412EB0B6" Association="Self.FK__Product__Produce__412EB0B6">
+          <AssociationSet Name="FK__Product__Produce__14270015" Association="Self.FK__Product__Produce__14270015">
             <End Role="Producer" EntitySet="Producer" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>

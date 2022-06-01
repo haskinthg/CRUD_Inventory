@@ -108,6 +108,15 @@ namespace CRUD_Inventory.Model
             }
             return db.Products.First(x => x.ProductId == id);
         }
-
+        static public void RemoveProduct(InventoryEntities db,Product p)
+        {
+            db.Products.Remove(p);
+            db.SaveChanges();
+        }
+        static public void RemoveProducer(InventoryEntities db, Producer p)
+        {
+            db.Producers.Remove(p);
+            db.SaveChanges();
+        }
     }
 }

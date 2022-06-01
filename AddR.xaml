@@ -17,7 +17,7 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock  Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Center" Text="Количество"/>
-        <TextBox Name="count" Grid.Row="0" Grid.Column="1" Margin="5"  Height="22"/>
+        <TextBox PreviewTextInput="NumberValidationTextBox" Name="count" Grid.Row="0" Grid.Column="1" Margin="5"  Height="22"/>
 
         <Button Content="Добавить" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1"  Width="80" Height="30" Click="AddClick"/>
     </Grid>

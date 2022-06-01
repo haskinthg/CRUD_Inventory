@@ -24,7 +24,7 @@
         <TextBox Name="adress" Grid.Row="1" Grid.Column="1" Margin="5"  Height="22"/>
 
         <TextBlock  Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Center" Text="Телефон"/>
-        <TextBox Name="phone" Grid.Row="2" Grid.Column="1" Margin="5"  Height="22"/>
+        <TextBox PreviewTextInput="NumberValidationTextBox" Name="phone" Grid.Row="2" Grid.Column="1" Margin="5"  Height="22"/>
 
         <Button Content="Добавить" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3"  Width="80" Height="30" Click="AddClick"/>
     </Grid>

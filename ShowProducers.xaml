@@ -12,6 +12,13 @@
                 <DataGridTextColumn Header="Наименование" Binding="{Binding PName}"/>
                 <DataGridTextColumn Header="Юр. Адрес" Binding="{Binding PAdress}"/>
                 <DataGridTextColumn Header="Телефон" Binding="{Binding PPhone}"/>
+                <DataGridTemplateColumn Width="65" Header="Удаление">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="Delete" Style="{StaticResource WhiteStyle}" Content="Удалить"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

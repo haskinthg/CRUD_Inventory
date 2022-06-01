@@ -16,8 +16,8 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Center" Text="Дата"/>
-        <DatePicker Name="date" Grid.Row="0" Grid.Column="1" Margin="5"  Height="22"/>
+        <TextBlock PreviewTextInput="NumberValidationTextBox" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Center" Text="Дата"/>
+        <DatePicker PreviewTextInput="NumberValidationTextBox" Name="date" Grid.Row="0" Grid.Column="1" Margin="5"  Height="22"/>
 
         <TextBlock  Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Center" Text="Количество"/>
         <TextBox Name="count" Grid.Row="1" Grid.Column="1" Margin="5"  Height="22"/>
