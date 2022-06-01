@@ -43,7 +43,7 @@ namespace CRUD_Inventory
             }
             catch
             {
-                MessageBox.Show("Введите все данные!");
+                MessageBox.Show("Ошибка! Введите все данные!");
             }
         }
     }

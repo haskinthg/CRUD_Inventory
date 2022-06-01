@@ -25,14 +25,21 @@ namespace CRUD_Inventory
         }
         private void AddClick(object sender, RoutedEventArgs e)
         {
-            var i = new Model.OutProduct
+            try
             {
-                OutDate = date.SelectedDate.Value.Date,
-                OutCount = int.Parse(count.Text)
-            };
-            var db = new Model.InventoryEntities();
-            Model.Data.AddOut(db,i);
-            this.Close();
+                var i = new Model.OutProduct
+                {
+                    OutDate = date.SelectedDate.Value.Date,
+                    OutCount = int.Parse(count.Text)
+                };
+                var db = new Model.InventoryEntities();
+                Model.Data.AddOut(db, i);
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка! Введите все данные!");
+            }
         }
     }
 }

@@ -11,17 +11,24 @@ namespace CRUD_Inventory
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var emp = new Employee
+            try
             {
-                StockId = Data.StocksId,
-                SFName = fname.Text,
-                SSName = sname.Text,
-                SLName = lname.Text,
-                Password = password.Text
-            };
-            InventoryEntities db = new InventoryEntities();
-            Data.AddEmp(db, emp);
-            MessageBox.Show($"Логин {emp.EmployeeId} \n Пароль - {emp.Password}");
+                var emp = new Employee
+                {
+                    StockId = Data.StocksId,
+                    SFName = fname.Text,
+                    SSName = sname.Text,
+                    SLName = lname.Text,
+                    Password = password.Text
+                };
+                InventoryEntities db = new InventoryEntities();
+                Data.AddEmp(db, emp);
+                MessageBox.Show($"Логин {emp.EmployeeId} \n Пароль - {emp.Password}");
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка! Введите все данные!");
+            }
         }
     }
 }

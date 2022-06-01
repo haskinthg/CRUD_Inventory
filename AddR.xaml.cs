@@ -36,7 +36,7 @@ namespace CRUD_Inventory
             }
             catch
             {
-                MessageBox.Show("Ошибка!");
+                MessageBox.Show("Ошибка! Введите все данные!");
             }
         }
     }

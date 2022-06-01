@@ -25,16 +25,23 @@ namespace CRUD_Inventory
         }
         private void AddClick(object sender, RoutedEventArgs e)
         {
-            var s = new Model.Producer
+            try
             {
-                PName = name.Text,
-                PAdress = adress.Text,
-                PPhone = phone.Text,
-                StockId = Model.Data.StocksId
-            };
-            var db = new Model.InventoryEntities();
-            Model.Data.AddProducer(db, s);
-            this.Close();
+                var s = new Model.Producer
+                {
+                    PName = name.Text,
+                    PAdress = adress.Text,
+                    PPhone = phone.Text,
+                    StockId = Model.Data.StocksId
+                };
+                var db = new Model.InventoryEntities();
+                Model.Data.AddProducer(db, s);
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка! Введите все данные!");
+            }
         }
     }
 }
