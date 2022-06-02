@@ -9,9 +9,7 @@
 
 namespace CRUD_Inventory.Model
 {
-    using System;
     using System.Collections.Generic;
-    
     public partial class Producer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,13 +17,11 @@ namespace CRUD_Inventory.Model
         {
             this.Products = new HashSet<Product>();
         }
-    
         public int ProducerId { get; set; }
         public string PName { get; set; }
         public string PAdress { get; set; }
         public string PPhone { get; set; }
         public int StockId { get; set; }
-    
         public virtual Stock Stock { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }

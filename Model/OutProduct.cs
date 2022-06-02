@@ -9,16 +9,12 @@
 
 namespace CRUD_Inventory.Model
 {
-    using System;
-    using System.Collections.Generic;
-    
     public partial class OutProduct
     {
         public int OutId { get; set; }
         public System.DateTime OutDate { get; set; }
         public int OutCount { get; set; }
         public int ProductId { get; set; }
-    
         public virtual Product Product { get; set; }
     }
 }

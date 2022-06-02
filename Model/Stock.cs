@@ -9,9 +9,7 @@
 
 namespace CRUD_Inventory.Model
 {
-    using System;
     using System.Collections.Generic;
-    
     public partial class Stock
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,12 +18,10 @@ namespace CRUD_Inventory.Model
             this.Employees = new HashSet<Employee>();
             this.Producers = new HashSet<Producer>();
         }
-    
         public int StockId { get; set; }
         public string SName { get; set; }
         public string SCity { get; set; }
         public string Adress { get; set; }
-    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Employee> Employees { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

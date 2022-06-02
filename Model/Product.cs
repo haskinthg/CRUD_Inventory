@@ -11,7 +11,6 @@ namespace CRUD_Inventory.Model
 {
     using System;
     using System.Collections.Generic;
-    
     public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,7 +19,6 @@ namespace CRUD_Inventory.Model
             this.InProducts = new HashSet<InProduct>();
             this.OutProducts = new HashSet<OutProduct>();
         }
-    
         public int ProductId { get; set; }
         public string PName { get; set; }
         public string PGroup { get; set; }
@@ -30,7 +28,6 @@ namespace CRUD_Inventory.Model
         public Nullable<int> nost { get; set; }
         public Nullable<int> rost { get; set; }
         public Nullable<int> dif { get; set; }
-    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<InProduct> InProducts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

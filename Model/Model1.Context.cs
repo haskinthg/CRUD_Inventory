@@ -12,7 +12,6 @@ namespace CRUD_Inventory.Model
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
     public partial class InventoryEntities : DbContext
     {
         public InventoryEntities()
@@ -20,12 +19,10 @@ namespace CRUD_Inventory.Model
         {
             Database.CreateIfNotExists();
         }
-    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-    
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<InProduct> InProducts { get; set; }
         public virtual DbSet<OutProduct> OutProducts { get; set; }
