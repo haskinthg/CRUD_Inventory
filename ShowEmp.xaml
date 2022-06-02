@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRUD_Inventory"
         mc:Ignorable="d"
-        Title="ShowEmp" Height="300" Width="450">
+        Title="Список сотрудников" Height="300" Width="450">
     <Grid>
         <DataGrid Name="data" Margin="10" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*" >
             <DataGrid.Columns>

@@ -76,5 +76,18 @@ namespace CRUD_Inventory
             }
             Update();
         }
+        private void SearchClick(object sender, RoutedEventArgs e)
+        {
+            data.Items.Clear();
+            foreach (var i in Data.Search(db,search.Text))
+            {
+                data.Items.Add(i);
+            }
+        }
+        private void ResetClick(object sender, RoutedEventArgs e)
+        {
+            search.Clear();
+            Update();
+        }
     }
 }

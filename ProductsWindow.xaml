@@ -16,10 +16,12 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <TextBlock Foreground="#005BB5" Margin="10" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Поиск"/>
-            <TextBox Margin="10" Height="22" Grid.Column="1" Background="#FFF1F1F1" />
-            <Button Grid.Column="2" Margin="10" Width="80" Content="Поиск" />
+            <TextBox Name="search" Margin="10" Height="22" Grid.Column="1" Background="#FFF1F1F1" />
+            <Button Grid.Column="2" Margin="10" Width="80" Content="Поиск" Click="SearchClick"/>
+            <Button Grid.Column="3" Margin="10" Width="60" Content="Сброс" Click="ResetClick"/>
         </Grid>
         <GroupBox Grid.Row="1">
             <GroupBox.Header>

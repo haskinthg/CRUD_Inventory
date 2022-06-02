@@ -8,6 +8,17 @@ namespace CRUD_Inventory.Model
     {
         static public int StocksId { get; set; }
         static public int ProductId { get; set; }
+        static public List<Product> Search(InventoryEntities db, string S)
+        {
+            SqlParameter s = new SqlParameter("@s", S);
+            return db.Products.SqlQuery("select * from product where " +
+                "cast(productid as nvarchar) like concat ('%',@s,'%') or " +
+                "pname like concat ('%',@s,'%') or " +
+                "pgroup like concat ('%',@s,'%') or " +
+                "punit like concat ('%',@s,'%') or " +
+                "pcountry like concat ('%',@s,'%') or " +
+                "producerid in (select producerid from producer where pname like concat ('%',@s,'%'))", s).ToList();
+        }
         static public List<Stock> GetStocks(InventoryEntities db)
         {
             return db.Stocks.ToList();
@@ -36,7 +47,8 @@ namespace CRUD_Inventory.Model
             }
             SqlParameter Id = new SqlParameter("@id", id);
             SqlParameter stockid = new SqlParameter("@idd", StocksId);
-            return db.Database.SqlQuery<string>("select password from employee where employeeid = @id and stockid = @idd", Id, stockid).Single();
+            return db.Database.SqlQuery<string>("select password from employee where employeeid = @id" +
+                " and stockid = @idd", Id, stockid).Single();
         }
         static public Employee FindEmployee(InventoryEntities db, int id)
         {
