@@ -56,12 +56,14 @@ namespace CRUD_Inventory
         }
         private void inadd(object sender, RoutedEventArgs e)
         {
+            Data.ProductId = (data.SelectedItem as Product).ProductId;
             var window = new AddIn();
             window.Show();
             window.Closed += Window_Closed;
         }
         private void outadd(object sender, RoutedEventArgs e)
         {
+            Data.ProductId = (data.SelectedItem as Product).ProductId;
             var window = new AddOut();
             window.Show();
             window.Closed += Window_Closed;

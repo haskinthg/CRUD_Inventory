@@ -14,17 +14,16 @@ using System.Windows.Shapes;
 
 namespace CRUD_Inventory
 {
-    /// <summary>
-    /// Логика взаимодействия для StockWindow.xaml
-    /// </summary>
+   
     public partial class StockWindow : Window
     {
         public StockWindow()
         {
             InitializeComponent();
+            db = new Model.InventoryEntities();
             Update();
         }
-        Model.InventoryEntities db = new Model.InventoryEntities();
+        Model.InventoryEntities db;
 
         private void OpenClick(object sender, RoutedEventArgs e)
         {

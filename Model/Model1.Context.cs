@@ -18,6 +18,7 @@ namespace CRUD_Inventory.Model
         public InventoryEntities()
             : base("name=InventoryEntities")
         {
+            Database.CreateIfNotExists();
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

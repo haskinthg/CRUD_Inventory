@@ -30,6 +30,7 @@ namespace CRUD_Inventory
             {
                 var i = new Model.OutProduct
                 {
+                    ProductId = Model.Data.ProductId,
                     OutDate = date.SelectedDate.Value.Date,
                     OutCount = int.Parse(count.Text)
                 };

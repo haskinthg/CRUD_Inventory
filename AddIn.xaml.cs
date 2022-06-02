@@ -1,23 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace CRUD_Inventory
 {
-    /// <summary>
-    /// Логика взаимодействия для AddIn.xaml
-    /// </summary>
     public partial class AddIn : Window
     {
         public AddIn()
@@ -26,14 +12,22 @@ namespace CRUD_Inventory
         }
         private void AddClick(object sender, RoutedEventArgs e)
         {
-            var o = new Model.InProduct
+            try
             {
-                InDate = date.SelectedDate.Value.Date,
-                InCount = int.Parse(count.Text)
-            };
-            var db = new Model.InventoryEntities();
-            Model.Data.AddIn(db, o);
-            this.Close();
+                var o = new Model.InProduct
+                {
+                    ProductId = Model.Data.ProductId,
+                    InDate = date.SelectedDate.Value.Date,
+                    InCount = int.Parse(count.Text)
+                };
+                var db = new Model.InventoryEntities();
+                Model.Data.AddIn(db, o);
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка! Введите все данные!");
+            }
         }
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
