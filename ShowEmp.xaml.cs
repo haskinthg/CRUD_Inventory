@@ -1,9 +1,9 @@
 ﻿using System.Windows;
 namespace CRUD_Inventory
 {
-    public partial class ShowProducers : Window
+    public partial class ShowEmp : Window
     {
-        public ShowProducers()
+        public ShowEmp()
         {
             InitializeComponent();
             Update();
@@ -12,12 +12,12 @@ namespace CRUD_Inventory
         private void Update()
         {
             data.Items.Clear();
-            foreach (var i in Model.Data.GetProducers(db))
+            foreach (var i in Model.Data.GetEmployees(db))
                 data.Items.Add(i);
         }
         private void Delete(object sender, RoutedEventArgs e)
         {
-            Model.Data.RemoveProducer(db, data.SelectedItem as Model.Producer);
+            Model.Data.RemoveEmployee(db, data.SelectedItem as Model.Employee);
             Update();
         }
     }

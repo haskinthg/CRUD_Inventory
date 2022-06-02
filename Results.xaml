@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRUD_Inventory"
         mc:Ignorable="d"
-        Title="Results" Height="450" Width="800">
+        Title="Инвентаризация" Height="450" Width="800" Icon="/Resources/in.jpg">
     <Grid>
-        <DataGrid Name="data" Margin="3,10,0,0" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*">
+        <DataGrid Name="data" Margin="3,10,0,0" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Код" Binding="{Binding ProductId}">
 

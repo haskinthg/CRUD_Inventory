@@ -1,18 +1,19 @@
-﻿<Window x:Class="CRUD_Inventory.ShowProducers"
+﻿<Window x:Class="CRUD_Inventory.ShowEmp"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRUD_Inventory"
         mc:Ignorable="d"
-        Title="Поставщики" Height="300" Width="450" Icon="/Resources/in.jpg">
+        Title="ShowEmp" Height="300" Width="450">
     <Grid>
         <DataGrid Name="data" Margin="10" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Наименование" Binding="{Binding PName}"/>
-                <DataGridTextColumn Header="Юр. Адрес" Binding="{Binding PAdress}"/>
-                <DataGridTextColumn Header="Телефон" Binding="{Binding PPhone}"/>
-                <DataGridTemplateColumn Width="65" Header="Удаление">
+                <DataGridTextColumn Header="Логин" Binding="{Binding EmployeeId}"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding SFName}"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding SSName}"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding SLName}"/>
+                <DataGridTemplateColumn  Header="Удаление">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Click="Delete" Style="{StaticResource WhiteStyle}" Content="Удалить"/>

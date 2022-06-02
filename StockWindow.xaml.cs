@@ -1,20 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-
 namespace CRUD_Inventory
 {
-   
     public partial class StockWindow : Window
     {
         public StockWindow()
@@ -24,7 +11,6 @@ namespace CRUD_Inventory
             Update();
         }
         Model.InventoryEntities db;
-
         private void OpenClick(object sender, RoutedEventArgs e)
         {
             if (data.SelectedItem != null)
@@ -35,7 +21,6 @@ namespace CRUD_Inventory
                 window.Owner = this;
             }
         }
-
         private void AddOpen(object sender, RoutedEventArgs e)
         {
             var window = new AddStock();
@@ -51,20 +36,32 @@ namespace CRUD_Inventory
         }
         private void ChangeClick(object sender, RoutedEventArgs e)
         {
-            
+            Model.Data.StocksId = (data.SelectedItem as Model.Stock).StockId;
+            var window = new ChangeStock();
+            window.Show();
+            window.Closed += Window_Closed;
+            window.Owner = this;
         }
-
         private void Window_Closed(object sender, EventArgs e)
         {
             Update();
         }
-
         private void Update()
         {
+            foreach (var entity in db.ChangeTracker.Entries())
+            {
+                entity.Reload();
+            }
             data.Items.Clear();
             foreach(var i in Model.Data.GetStocks(db))
                 data.Items.Add(i);
         }
-
+        private void Show(object sender, RoutedEventArgs e)
+        {
+            Model.Data.StocksId = (data.SelectedItem as Model.Stock).StockId;
+            var window = new ShowEmp();
+            window.Show();
+            window.Owner = this;
+        }
     }
 }

@@ -8,7 +8,6 @@ namespace CRUD_Inventory
         {
             InitializeComponent();
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             try

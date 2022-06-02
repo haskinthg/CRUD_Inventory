@@ -82,6 +82,12 @@
     <Compile Include="AddStock.xaml.cs">
       <DependentUpon>AddStock.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ChangeProduct.xaml.cs">
+      <DependentUpon>ChangeProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeStock.xaml.cs">
+      <DependentUpon>ChangeStock.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\Data.cs" />
     <Compile Include="Model\Employee.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -125,6 +131,9 @@
     <Compile Include="Results.xaml.cs">
       <DependentUpon>Results.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ShowEmp.xaml.cs">
+      <DependentUpon>ShowEmp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ShowProducers.xaml.cs">
       <DependentUpon>ShowProducers.xaml</DependentUpon>
     </Compile>
@@ -152,6 +161,14 @@
     <Page Include="AddStock.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ChangeProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChangeStock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\DictionaryDataGrid.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -177,6 +194,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Results.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowEmp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

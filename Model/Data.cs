@@ -2,12 +2,10 @@
 using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
-
 namespace CRUD_Inventory.Model
 {
     internal static class Data
     {
-
         static public int StocksId { get; set; }
         static public int ProductId { get; set; }
         static public List<Stock> GetStocks(InventoryEntities db)
@@ -38,7 +36,7 @@ namespace CRUD_Inventory.Model
             }
             SqlParameter Id = new SqlParameter("@id", id);
             SqlParameter stockid = new SqlParameter("@idd", StocksId);
-            return db.Database.SqlQuery<string>("select password from employee where employeeid = @id and stockid = @idd", Id,stockid).Single();
+            return db.Database.SqlQuery<string>("select password from employee where employeeid = @id and stockid = @idd", Id, stockid).Single();
         }
         static public Employee FindEmployee(InventoryEntities db, int id)
         {
@@ -55,8 +53,8 @@ namespace CRUD_Inventory.Model
         }
         static public List<Producer> GetProducers(InventoryEntities db)
         {
-            SqlParameter id = new SqlParameter("@id",StocksId);
-            return db.Producers.SqlQuery("select * from producer where stockid = @id",id).ToList();
+            SqlParameter id = new SqlParameter("@id", StocksId);
+            return db.Producers.SqlQuery("select * from producer where stockid = @id", id).ToList();
         }
         static public List<Product> GetProducts(InventoryEntities db)
         {
@@ -64,12 +62,16 @@ namespace CRUD_Inventory.Model
             return db.Products.SqlQuery("select * from product where producerid in " +
                 "(select producerid from producer where stockid = @id)", id).ToList();
         }
+        static public List<Employee> GetEmployees(InventoryEntities db)
+        {
+            SqlParameter id = new SqlParameter("@id", StocksId);
+            return db.Employees.SqlQuery("select * from employee where stockid = @id", id).ToList();
+        }
         static public void AddProduct(InventoryEntities db, Product p)
         {
             db.Products.Add(p);
             db.SaveChanges();
         }
-
         static public void AddIn(InventoryEntities db, InProduct i)
         {
             db.InProducts.Add(i);
@@ -83,20 +85,19 @@ namespace CRUD_Inventory.Model
         static public List<InProduct> GetIn(InventoryEntities db, int ID)
         {
             SqlParameter id = new SqlParameter("@id", ID);
-            return db.InProducts.SqlQuery("select * from inproduct where productid = @id",id).ToList();
+            return db.InProducts.SqlQuery("select * from inproduct where productid = @id", id).ToList();
         }
         static public List<OutProduct> GetOut(InventoryEntities db, int ID)
         {
             SqlParameter id = new SqlParameter("@id", ID);
             return db.OutProducts.SqlQuery("select * from outproduct where productid = @id", id).ToList();
         }
-
         static public int GetNost(InventoryEntities db, int id)
         {
-            int a=0;
-            foreach (var i in GetIn(db,id))
+            int a = 0;
+            foreach (var i in GetIn(db, id))
                 a += i.InCount;
-            foreach (var i in GetOut(db,id))
+            foreach (var i in GetOut(db, id))
                 a -= i.OutCount;
             return a;
         }
@@ -108,15 +109,28 @@ namespace CRUD_Inventory.Model
             }
             return db.Products.First(x => x.ProductId == id);
         }
-        static public void RemoveProduct(InventoryEntities db,Product p)
+        static public void RemoveProduct(InventoryEntities db, Product p)
         {
             db.Products.Remove(p);
+            db.SaveChanges();
+        }
+        static public void RemoveEmployee(InventoryEntities db, Employee em)
+        {
+            db.Employees.Remove(em);
             db.SaveChanges();
         }
         static public void RemoveProducer(InventoryEntities db, Producer p)
         {
             db.Producers.Remove(p);
             db.SaveChanges();
+        }
+        static public Stock FingStock(InventoryEntities db, int id)
+        {
+            foreach (var entity in db.ChangeTracker.Entries())
+            {
+                entity.Reload();
+            }
+            return db.Stocks.First(x => x.StockId == id);
         }
     }
 }

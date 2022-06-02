@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRUD_Inventory"
         mc:Ignorable="d"
-        Title="Приход" Height="160" Width="300">
+        Title="Приход" Height="160" Width="300" Icon="/Resources/in.jpg" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>

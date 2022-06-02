@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRUD_Inventory"
         mc:Ignorable="d"
-        Title="Выбор склада" Height="350" Width="450" ResizeMode="NoResize">
+        Title="Выбор склада" Height="350" Width="500" ResizeMode="NoResize" Icon="/Resources/in.jpg">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -18,6 +18,13 @@
                 <DataGridTextColumn Header="Название склада" Binding="{Binding SName}"/>
                 <DataGridTextColumn Header="Город" Binding="{Binding SCity}"/>
                 <DataGridTextColumn Header="Адрес" Binding="{Binding Adress}"/>
+                <DataGridTemplateColumn Header="Сотрудники">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="Show" Style="{StaticResource WhiteStyle}" Content="Просмотр"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <WrapPanel HorizontalAlignment="Center" Grid.Row="2">

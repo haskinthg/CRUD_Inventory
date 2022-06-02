@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRUD_Inventory"
         mc:Ignorable="d"
-        Title="Добавление поставщика" Height="200" Width="300" ResizeMode="NoResize">
+        Title="Добавление поставщика" Height="200" Width="300" ResizeMode="NoResize" Icon="/Resources/in.jpg">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>

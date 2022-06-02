@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRUD_Inventory"
         mc:Ignorable="d"
-        Title="Регистрация сотрудника" Height="330" Width="440">
+        Title="Регистрация сотрудника" Height="330" Width="440" Icon="/Resources/in.jpg" ResizeMode="NoResize">
     <Grid>
-        <GroupBox Margin="20" Header="Регистрация" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <GroupBox Margin="20" Header="Регистрация" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
             <Grid  Margin="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40" />

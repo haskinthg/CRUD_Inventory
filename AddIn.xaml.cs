@@ -1,7 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
-
 namespace CRUD_Inventory
 {
     public partial class AddIn : Window
