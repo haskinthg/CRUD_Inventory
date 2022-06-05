@@ -29,6 +29,7 @@ namespace CRUD_Inventory
         private void addr(object sender, RoutedEventArgs e)
         {
             var window = new AddR();
+            Data.ProductId = (data.SelectedItem as Product).ProductId;
             window.Show();
             window.Closed += Window_Closed;
         }
